@@ -1,0 +1,54 @@
+{
+  "user": [
+    {
+      "id": 10000,
+      "name": "赵一",
+      "age": 25,
+      "gender": "male"
+    },
+    {
+      "id": 10001,
+      "name": "钱二",
+      "age": 30,
+      "gender": "female"
+    },
+    {
+      "name": "张三",
+      "age": 12,
+      "gender": "female",
+      "id": 10002
+    },
+    {
+      "name": "李四",
+      "age": 12,
+      "gender": "female",
+      "id": 10003
+    },
+    {
+      "name": "王五",
+      "age": 18,
+      "gender": "male",
+      "id": 10004
+    },
+    {
+      "name": "孙六",
+      "age": 28,
+      "gender": "male",
+      "id": 10005
+    }
+  ],
+  "book": [
+    {
+      "id": 10000,
+      "name": "JavaScript�����ŵ���ͨ",
+      "price": 9990,
+      "owner_id": 10000
+    },
+    {
+      "id": 10001,
+      "name": "Java�����ŵ�����",
+      "price": 1990,
+      "owner_id": 10001
+    }
+  ]
+}
