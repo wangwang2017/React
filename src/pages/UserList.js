@@ -42,20 +42,40 @@ class UserList extends React.Component {
         const {userList} = this.state;
         const columns =[
             {
-                title:'用户ID',
+                title:'用户名ID',
                 dataIndex:'id'
             },
             {
-                title:'用户名',
-                dataIndex:'name'
+                title:'姓名',
+                dataIndex:'user_name'
             },
             {
                 title:'性别',
-                dataIndex:'gender'
+                dataIndex:'user_gender'
             },
             {
-                title:'年龄',
-                dataIndex:'age'
+                title:'账号',
+                dataIndex:'user_account'
+            },
+            {
+                title:'密码',
+                dataIndex:'user_password'
+            },
+            {
+                title:'邮箱',
+                dataIndex:'user_email'
+            },
+            {
+                title:'电话',
+                dataIndex:'user_phone'
+            },
+            {
+                title:'权限',
+                dataIndex:'user_role'
+            },
+            {
+                title:'区域',
+                dataIndex:'user_area'
             },
             {
                 title:'操作',

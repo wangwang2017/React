@@ -1,42 +1,119 @@
 {
   "user": [
     {
-      "name": "张三",
-      "age": 12,
-      "gender": "male",
+      "user_name": "张三",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13838389438",
+      "user_role": "0",
+      "user_area": "10000",
+      "id": 10000
+    },
+    {
+      "user_name": "李四",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13737379437",
+      "user_role": "0",
+      "user_area": "100000",
+      "id": 10001
+    },
+    {
+      "user_name": "王五",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13636369436",
+      "user_role": "0",
+      "user_area": "10000",
       "id": 10002
-    },
-    {
-      "name": "李四",
-      "age": 12,
-      "gender": "female",
-      "id": 10003
-    },
-    {
-      "name": "王五",
-      "age": 18,
-      "gender": "male",
-      "id": 10004
-    },
-    {
-      "name": "孙六",
-      "age": 28,
-      "gender": "male",
-      "id": 10005
     }
   ],
-  "book": [
+  "equipment": [
     {
-      "id": 10000,
-      "name": "前端从入门到精通",
-      "price": 9990,
-      "owner_id": 10000
+      "e_code": "zs_lc_10",
+      "e_name": "查询办证机",
+      "e_lib": "zstsg",
+      "e_address": "中国浙江舟山",
+      "e_info": "版本：0.0.7.5，固件版本：0.0.10.0",
+      "e_kind": 1,
+      "e_status": true,
+      "e_log": [
+        "正在办卡",
+        "正在查询"
+      ],
+      "e_area": 1,
+      "e_pay": 3000,
+      "id": 10000
     },
     {
-      "id": 10001,
-      "name": "Java从入门到放弃",
-      "price": 1990,
-      "owner_id": 10001
+      "e_code": "Y11-01-211",
+      "e_name": "自助借还机",
+      "e_lib": "wltsg",
+      "e_address": "中国浙江温岭",
+      "e_info": "版本：0.0.7.5，固件版本：0.0.10.0",
+      "e_kind": 2,
+      "e_status": true,
+      "e_log": [
+        "正在借书",
+        "正在还书",
+        "正在续借",
+        "正在查询"
+      ],
+      "e_area": 1,
+      "e_pay": 3000,
+      "id": 10001
+    }
+  ],
+  "area": [
+    {
+      "a_name": "浙江",
+      "a_user": 10002,
+      "a_libs": [
+        "wltsg",
+        "zstsg"
+      ],
+      "id": 10000
+    }
+  ],
+  "lib": [
+    {
+      "lib_name": "温岭图书馆",
+      "lib_duty": "温岭馆长",
+      "lib_phone": "137xxxxxxxx",
+      "lib_area": 10000,
+      "lib_address": "中国浙江温岭",
+      "lib_email": "wltsg@163.com",
+      "lib_code": "wltsg",
+      "lib_income": 3000,
+      "id": 10000
+    },
+    {
+      "lib_name": "舟山图书馆",
+      "lib_duty": "舟山",
+      "lib_phone": "131xxxxxxxx",
+      "lib_area": 10000,
+      "lib_address": "中国浙江舟山",
+      "lib_mail": "zssg@163.com",
+      "lib_code": "zstsg",
+      "lib_income": 3000,
+      "id": 10001
+    },
+    {
+      "lib_name": "旺旺图书馆",
+      "lib_duty": "李旺",
+      "lib_phone": "17718989789",
+      "lib_email": "wangwang@163.com",
+      "lib_address": "中国湖南邵东",
+      "lib_code": "wwtsg",
+      "lib_area": 10000,
+      "lib_income": 100000,
+      "id": 10002
     }
   ]
 }

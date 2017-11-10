@@ -24,12 +24,12 @@ class HomeLayout extends React.Component{
                                     <Link to="/user/add">添加用户</Link>
                                 </MenuItem>
                             </SubMenu>
-                            <SubMenu key="book" title={<span><Icon type="book"/><span>图书管理</span></span>}>
-                                <MenuItem key="book-list">
-                                    <Link to="/book/list">图书列表</Link>
+                            <SubMenu key="lib" title={<span><Icon type="appstore"/><span>图书馆管理</span></span>}>
+                                <MenuItem key="lib-list">
+                                    <Link to="/lib/list">图书馆列表</Link>
                                 </MenuItem>
-                                <MenuItem key="book-add">
-                                    <Link to="/book/add">添加图书</Link>
+                                <MenuItem key="lib-add">
+                                    <Link to="/lib/add">添加图书馆</Link>
                                 </MenuItem>
                             </SubMenu>
                         </Menu>

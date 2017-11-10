@@ -62,12 +62,12 @@ class UserEditor extends React.Component{
         return(
             <div style={{width: '400px'}}>
             <Form onSubmit={(e) =>this.handleSubmit(e)}>
-               <FormItem label="用户名：" {...formLayout}>
-                   {getFieldDecorator('name',{
+               <FormItem label="姓名：" {...formLayout}>
+                   {getFieldDecorator('user_name',{
                        rules:[
                            {
                                required:true,
-                               message:'请输入用户名'
+                               message:'请输入姓名'
                            },
                            {
                                pattern:/^.{1,4}$/,
@@ -78,28 +78,8 @@ class UserEditor extends React.Component{
                        <Input type="text"/>
                    )}
                </FormItem>
-
-                <FormItem label="年龄：" {...formLayout}>
-                    {getFieldDecorator('age',{
-                        rules:[
-                            {
-                                required:true,
-                                message:'请输入年龄',
-                                type:'number'
-                            },
-                            {
-                                min:1,
-                                max:100,
-                                message:'请输入1~100的年龄',
-                                type:'number'
-                            }
-                        ]
-                    })(
-                        <InputNumber/>
-                    )}
-               </FormItem>
                 <FormItem label="性别：" {...formLayout}>
-                    {getFieldDecorator('gender',{
+                    {getFieldDecorator('user_gender',{
                         rules:[
                             {
                                 required:true,
@@ -113,6 +93,94 @@ class UserEditor extends React.Component{
                         </Select>
                     )}
                </FormItem>
+                <FormItem label="账号：" {...formLayout}>
+                    {getFieldDecorator('user_account',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入账号'
+                            },
+                        ]
+                    })(
+                        <Input type="text"/>
+                    )}
+                </FormItem>
+                <FormItem label="密码：" {...formLayout}>
+                    {getFieldDecorator('user_password',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入密码',
+                                type: 'string'
+                            },
+                        ]
+                    })(
+                        <Input type="password"/>
+                    )}
+                </FormItem>
+                <FormItem label="邮箱：" {...formLayout}>
+                    {getFieldDecorator('user_email',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入邮箱',
+                            },
+                            {
+                                pattern:/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,
+                                message:'请输入正确的电子邮箱'
+
+                            }
+                        ]
+                    })(
+                        <Input type="text"/>
+                    )}
+                </FormItem>
+                <FormItem label="电话：" {...formLayout}>
+                    {getFieldDecorator('user_phone',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入手机号码',
+                            },
+                            {
+                                pattern:/^1(3|4|5|7|8)\d{9}$/,
+                                message:'请输入正确的手机号码'
+
+                            }
+                        ]
+                    })(
+                        <Input type="text"/>
+                    )}
+                </FormItem>
+                <FormItem label="权限：" {...formLayout}>
+                    {getFieldDecorator('user_role',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请选择权限',
+                            }
+                        ]
+                    })(
+                        <Select placeholder="请选择">
+                            <Select.Option value="0">超级管理员</Select.Option>
+                            <Select.Option value="1">财务管理员</Select.Option>
+                            <Select.Option value="2">区域管理员</Select.Option>
+                            <Select.Option value="3">区域维护员</Select.Option>
+                        </Select>
+                    )}
+                </FormItem>
+                <FormItem label="区域：" {...formLayout}>
+                    {getFieldDecorator('user_area',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入区域号',
+                            },
+                        ]
+                    })(
+                        <Input type="text"/>
+                    )}
+                </FormItem>
                 <br/>
                 <br/>
                 <FormItem wrapperCol ={{...formLayout.wrapperCol,offset:formLayout.labelCol.span}}>

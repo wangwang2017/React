@@ -5,9 +5,9 @@ import HomePage from './pages/Home';
 import UserAddPage from './pages/UserAdd';
 import UserListPage from './pages/UserList';
 import UserEditPage from './pages/UserEdit';
-import BookAddPage from './pages/BookAdd';
-import BookListPage from './pages/BookList';
-import BookEditPage from './pages/BookEdit';
+import LibAddPage from './pages/LibAdd';
+import LibListPage from './pages/LibList';
+import LibEditPage from './pages/LibEdit';
 import LoginPage from './pages/Login';
 import HomeLayout from './layouts/HomeLayout'
 
@@ -18,9 +18,9 @@ ReactDOM.render((
                     <Route path="/user/add" component={UserAddPage}/>
                     <Route path="/user/list" component={UserListPage}/>
                     <Route path="/user/edit/:id" component={UserEditPage}/>
-                    <Route path="/book/add" component={BookAddPage}/>
-                    <Route path="/book/list" component={BookListPage}/>
-                    <Route path="/book/edit/:id" component={BookEditPage}/>
+                    <Route path="/lib/add" component={LibAddPage}/>
+                    <Route path="/lib/list" component={LibListPage}/>
+                    <Route path="/lib/edit/:id" component={LibEditPage}/>
             </Route>
             <Route path="/login" component={LoginPage}/>
     </Router>
