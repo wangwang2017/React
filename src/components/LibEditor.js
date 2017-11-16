@@ -195,19 +195,20 @@ class LibEditor extends React.Component {
                                 message:'请输入正确的ID'
                             }
                         ]
-                    })(<InputNumber/>)}
+                    })(<InputNumber disabled="false"/>)}
                 </FormItem>
                 <FormItem label="馆收支：" {...formLayout}>
                     {getFieldDecorator('lib_income', {
                         rules: [
                             {
+
                                 required: true,
                                 message: '请输入图书馆的收支情况',
                                 type:'number'
                             }
 
                         ]
-                    })(<InputNumber/>)}
+                    })(<InputNumber disabled="false"/>)}
                 </FormItem>
                 <FormItem wrapperCol={{span: formLayout.wrapperCol.span, offset: formLayout.labelCol.span}}>
                     <Button type="primary" htmlType="submit">提交</Button>

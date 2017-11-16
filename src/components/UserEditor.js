@@ -1,6 +1,6 @@
 import React from 'react';
 import request from '../utils/request';
-import { Form, Input, InputNumber, Select, Button, message } from 'antd';
+import { Form, Input, Select, Button, message } from 'antd';
 
 const FormItem = Form.Item;
 

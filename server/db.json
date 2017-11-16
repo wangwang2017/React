@@ -16,7 +16,7 @@
       "user_gender": "male",
       "user_account": "admin",
       "user_password": "123456",
-      "user_email": "zhangsan@163.com",
+      "user_email": "zhangsang@163.com",
       "user_phone": "13737379437",
       "user_role": "0",
       "user_area": "100000",
@@ -34,7 +34,7 @@
       "id": 10002
     }
   ],
-  "equipment": [
+  "equipments": [
     {
       "e_code": "zs_lc_10",
       "e_name": "查询办证机",
@@ -42,13 +42,7 @@
       "e_address": "中国浙江舟山",
       "e_info": "版本：0.0.7.5，固件版本：0.0.10.0",
       "e_kind": 1,
-      "e_status": true,
-      "e_log": [
-        "正在办卡",
-        "正在查询"
-      ],
       "e_area": 1,
-      "e_pay": 3000,
       "id": 10000
     },
     {
@@ -56,17 +50,16 @@
       "e_name": "自助借还机",
       "e_lib": "wltsg",
       "e_address": "中国浙江温岭",
-      "e_info": "版本：0.0.7.5，固件版本：0.0.10.0",
+      "e_info": "版本：0.0.7.5，固件版本：0.0.10.1",
       "e_kind": 2,
-      "e_status": true,
+      "e_area": 1,
+      "e_status": "Running",
       "e_log": [
         "正在借书",
         "正在还书",
         "正在续借",
         "正在查询"
       ],
-      "e_area": 1,
-      "e_pay": 3000,
       "id": 10001
     }
   ],
@@ -99,7 +92,7 @@
       "lib_phone": "131xxxxxxxx",
       "lib_area": 10000,
       "lib_address": "中国浙江舟山",
-      "lib_mail": "zssg@163.com",
+      "lib_email": "zssg@163.com",
       "lib_code": "zstsg",
       "lib_income": 3000,
       "id": 10001
@@ -114,6 +107,185 @@
       "lib_area": 10000,
       "lib_income": 100000,
       "id": 10002
+    }
+  ],
+  "equipment_kind": [
+    {
+      "ek_name": "馆员工作站",
+      "ek_code": 1,
+      "id": 10000
+    },
+    {
+      "ek_name": "自助借还设备",
+      "ek_code": 2,
+      "id": 10001
+    },
+    {
+      "ek_name": "办证查询设备",
+      "ek_code": 3,
+      "id": 10002
+    },
+    {
+      "ek_name": "盘点机器人",
+      "ek_code": 4,
+      "id": 10003
+    },
+    {
+      "ek_name": "分拣设备",
+      "ek_code": 5,
+      "id": 10004
+    }
+  ],
+  "heart": [
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-16-9-40-50",
+      "id": 10000
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-15-8-40-50",
+      "id": 10001
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-12-7-40-50",
+      "id": 10002
+    },
+    {
+      "status": "Running",
+      "ecode": "zs_lc_10",
+      "timestamp": "2017-11-14-7-40-50",
+      "id": 10003
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-13-7-40-50",
+      "id": 10004
+    },
+    {
+      "status": "Running",
+      "ecode": "zs_lc_10",
+      "timestamp": "2017-11-13-7-40-50",
+      "id": 10005
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-11-7-40-50",
+      "id": 10006
+    },
+    {
+      "status": "Running",
+      "ecode": "zs_lc_10",
+      "timestamp": "2017-11-12-7-40-50",
+      "id": 10007
+    },
+    {
+      "status": "Running",
+      "ecode": "zs_lc_10",
+      "timestamp": "2017-11-11-7-40-50",
+      "id": 10008
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-10-7-40-50",
+      "id": 10002
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-10-7-40-50",
+      "id": 10009
+    },
+    {
+      "status": "Running",
+      "ecode": "Y11-01-211",
+      "timestamp": "2017-11-09-7-40-50",
+      "id": 10010
+    },
+    {
+      "status": "Running",
+      "ecode": "zs_lc_10",
+      "timestamp": "2017-11-08-7-40-50",
+      "id": 10011
+    }
+  ],
+  "logs":[
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Send",
+      "timestamp":"2017-11-10 09:13:19",
+      "info_content":"{command:111,mark:104693,session_id:sesion2,certificate_code:430521199111048737,type:1,lib_code:0800,equipment_id:1}",
+      "id":10000
+    },
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Receive",
+      "timestamp":"2017-11-10 09:13:35",
+      "info_content":"request is failure:  java.net.SocketTimeoutExceptionurl:10.0.0.42:5000",
+      "id":10001
+    },
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Send",
+      "timestamp":"2017-11-10 09:15:43",
+      "info_content":"{command:111,mark:104693,session_id:sesion2,certificate_code:430521199111048737,type:1,lib_code:0800,equipment_id:1}",
+      "id":10002
+    },
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Receive",
+      "timestamp":"2017-11-10 09:15:50",
+      "info_content":"{command:112,result:ok,message:,lib_code:0800,lib_name:undefined,check_code:5690,session_id:4681053,card_fee:[{card_no:080000800001,fee_amount:0.3,qr_code:https://qr.alipay.com/bax09688syk9umvgqr7c0080}]}",
+      "id":10003
+    },
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Send",
+      "timestamp":"{command:113,mark:108068,session_id:4681053,equipment_id:0800,check_code:5690}",
+      "info_content":"2017-11-10 09:16:10",
+      "id":10004
+    },
+    {
+      "ecode":"zs_lc_10",
+      "info_kind":"Receive",
+      "timestamp":"2017-11-10 09:16:20",
+      "info_content":"{command:114,result:ok,message:}",
+      "id":10005
+    },
+    {
+      "ecode":"Y11-01-211",
+      "info_kind":"Send",
+      "timestamp":"2017-11-10 15:20:25",
+      "info_content":"正在选卡",
+      "id":10006
+    },
+    {
+      "ecode":"Y11-01-211",
+      "info_kind":"Receive",
+      "timestamp":"2017-11-10 15:20:29",
+      "info_content":"选择身份证",
+      "id":10007
+    },
+    {
+      "ecode":"Y11-01-211",
+      "info_kind":"Send",
+      "timestamp":"2017-11-10 15:20:40",
+      "info_content":"扫描书籍",
+      "id":10008
+    },
+    {
+      "ecode":"Y11-01-211",
+      "info_kind":"Receive",
+      "timestamp":"2017-11-10 15:21:40",
+      "info_content":"借书成功",
+      "id":10009
     }
   ]
 }

@@ -93,7 +93,8 @@ class UserList extends React.Component {
         ];
 
         return (
-                <Table dataSource={userList} columns={columns} rowKey={row=>row.id}/>
+            <Table dataSource={userList} columns={columns} rowKey={row=>row.id}>
+            </Table>
         );
     }
 }
