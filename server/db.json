@@ -95,8 +95,8 @@
       "a_name": "上海",
       "a_user": 10005,
       "a_libs": [
-        "jdtsg",
-        "pdtsg"
+        "shjdtsg",
+        "shpdtsg"
       ],
       "id": 10003
     }
@@ -129,7 +129,7 @@
       "lib_duty": "安徽时代",
       "lib_phone": "132xxxxxxxx",
       "lib_email": "ahsdtsg@163.com",
-      "lib_address": "中国江西南昌",
+      "lib_address": "中国安徽",
       "lib_code": "ahsdtsg",
       "lib_area": 10001,
       "lib_income": 100000,
@@ -140,7 +140,7 @@
       "lib_duty": "安徽",
       "lib_phone": "133xxxxxxxx",
       "lib_email": "ahtsg@163.com",
-      "lib_address": "中国江西南昌",
+      "lib_address": "中国安徽",
       "lib_code": "ahstsg",
       "lib_area": 10001,
       "lib_income": 100000,
@@ -167,6 +167,28 @@
       "lib_area": 10002,
       "lib_income": 100000,
       "id": 10005
+    },
+    {
+      "lib_name": "上海浦东图书馆",
+      "lib_duty": "上海",
+      "lib_phone": "139xxxxxxxx",
+      "lib_email": "shpdtsg@163.com",
+      "lib_address": "中国上海",
+      "lib_code": "shpdtsg",
+      "lib_area": 10003,
+      "lib_income": 100000,
+      "id": 10006
+    },
+    {
+      "lib_name": "上海交大图书馆",
+      "lib_duty": "上海",
+      "lib_phone": "147xxxxxxxx",
+      "lib_email": "shjdtsg@163.com",
+      "lib_address": "中国上海",
+      "lib_code": "shjdtsg",
+      "lib_area": 10003,
+      "lib_income": 100000,
+      "id": 10007
     }
   ],
   "equipment_kind": [
