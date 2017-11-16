@@ -72,6 +72,33 @@
         "zstsg"
       ],
       "id": 10000
+    },
+    {
+      "a_name": "江西",
+      "a_user": 10003,
+      "a_libs": [
+        "ncxtsg",
+        "jxstsg"
+      ],
+      "id": 10001
+    },
+    {
+      "a_name": "安徽",
+      "a_user": 10004,
+      "a_libs": [
+        "ahsdtsg",
+        "ahstsg"
+      ],
+      "id": 10002
+    },
+    {
+      "a_name": "上海",
+      "a_user": 10005,
+      "a_libs": [
+        "jdtsg",
+        "pdtsg"
+      ],
+      "id": 10003
     }
   ],
   "lib": [
@@ -98,15 +125,48 @@
       "id": 10001
     },
     {
-      "lib_name": "旺旺图书馆",
-      "lib_duty": "李旺",
-      "lib_phone": "17718989789",
-      "lib_email": "wangwang@163.com",
-      "lib_address": "中国湖南邵东",
-      "lib_code": "wwtsg",
-      "lib_area": 10000,
+      "lib_name": "安徽时代图书馆",
+      "lib_duty": "安徽时代",
+      "lib_phone": "132xxxxxxxx",
+      "lib_email": "ahsdtsg@163.com",
+      "lib_address": "中国江西南昌",
+      "lib_code": "ahsdtsg",
+      "lib_area": 10001,
       "lib_income": 100000,
       "id": 10002
+    },
+    {
+      "lib_name": "安徽图书馆",
+      "lib_duty": "安徽",
+      "lib_phone": "133xxxxxxxx",
+      "lib_email": "ahtsg@163.com",
+      "lib_address": "中国江西南昌",
+      "lib_code": "ahstsg",
+      "lib_area": 10001,
+      "lib_income": 100000,
+      "id": 10003
+    },
+    {
+      "lib_name": "南昌县图书馆",
+      "lib_duty": "南昌",
+      "lib_phone": "177xxxxxxxx",
+      "lib_email": "ncxtsg@163.com",
+      "lib_address": "中国江西南昌",
+      "lib_code": "ncxtsg",
+      "lib_area": 10002,
+      "lib_income": 100000,
+      "id": 10004
+    },
+    {
+      "lib_name": "江西省图书馆",
+      "lib_duty": "江西",
+      "lib_phone": "187xxxxxxxx",
+      "lib_email": "jxstsg@163.com",
+      "lib_address": "中国江西南昌",
+      "lib_code": "jxstsg",
+      "lib_area": 10002,
+      "lib_income": 100000,
+      "id": 10005
     }
   ],
   "equipment_kind": [
