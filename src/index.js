@@ -11,6 +11,9 @@ import LibEditPage from './pages/LibEdit';
 import EquipAddPage from './pages/EquipAdd';
 import EquipListPage from './pages/EquipList';
 import EquipEditPage from './pages/EquipEdit';
+import AreaAddPage from './pages/AreaAdd';
+import AreaListPage from './pages/AreaList';
+import AreaEditPage from './pages/AreaEdit';
 import EquipmentHeartPage from './pages/EquipmentHeart';
 import EquipmentLogPage from './pages/EquipmentLog';
 import LoginPage from './pages/Login';
@@ -29,6 +32,9 @@ ReactDOM.render((
                 <Route path="/equipments/add" component={EquipAddPage}/>
                 <Route path="/equipments/list" component={EquipListPage}/>
                 <Route path="/equipments/edit/:id" component={EquipEditPage}/>
+                <Route path="/area/add" component={AreaAddPage}/>
+                <Route path="/area/list" component={AreaListPage}/>
+                <Route path="/area/edit/:id" component={AreaEditPage}/>
                 <Route path="/heart/ecode/:id" component={EquipmentHeartPage}/>
                 <Route path="/logs/ecode/:id" component={EquipmentLogPage}/>
             </Route>

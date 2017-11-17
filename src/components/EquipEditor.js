@@ -38,7 +38,7 @@ class EquipEditor extends React.Component{
                 return;
             }
             let editType = '添加';
-            let apiUrl = 'http://localhost:3000/equipments'
+            let apiUrl = 'http://localhost:3000/equipments';
             let method = 'post';
             if(editTarget){
                 editType = '编辑';
