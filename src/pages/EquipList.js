@@ -51,11 +51,15 @@ class EquipList extends React.Component{
         const columns = [
             {
                 title:'设备ID',
-                dataIndex:'id'
+                dataIndex:'id',
+                width:100,
+                fixed: 'left'
             },
             {
                 title:'设备编号',
-                dataIndex:'e_code'
+                dataIndex:'e_code',
+                width:100,
+                fixed: 'left'
             },
             {
                 title:'设备名称',
@@ -95,6 +99,8 @@ class EquipList extends React.Component{
             },
             {
                 title:'操作',
+                fixed: 'right',
+                width: 120,
                 render:(text,record) =>(
                     <Button.Group type="ghost">
                         <Button size="small" onClick={()=>this.handleEdit(record)}>编辑</Button>
@@ -106,7 +112,7 @@ class EquipList extends React.Component{
             }
         ];
         return(
-            <Table dataSource={equipList} columns={columns} rowKey={row =>row.id}/>
+            <Table dataSource={equipList} columns={columns} rowKey={row =>row.id} scroll={{ x: '130%' }}/>
         );
     }
 }

@@ -188,14 +188,9 @@ class LibEditor extends React.Component {
                             {
                                 required: true,
                                 message: '请输入图书馆的所在区域',
-                                type:'number'
-                            },
-                            {
-                                pattern: /^\d*$/,
-                                message:'请输入正确的ID'
                             }
                         ]
-                    })(<InputNumber disabled="false"/>)}
+                    })(<Input type="text" />)}
                 </FormItem>
                 <FormItem label="馆收支：" {...formLayout}>
                     {getFieldDecorator('lib_income', {

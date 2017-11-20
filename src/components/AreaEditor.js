@@ -1,6 +1,6 @@
 import React from 'react';
-import {Input,InputNumber,Form,Button,message} from 'antd';
-import request from '../utils/request';
+import {Input,Select,Form,Button,message} from 'antd';
+import request,{get} from '../utils/request';
 const FormItem = Form.Item;
 const formLayout ={
     labelCol:{
@@ -10,11 +10,21 @@ const formLayout ={
         span:16
     }
 };
-
+const Option = Select.Option;
+const children = [];
+for (let i = 10; i < 36; i++) {
+    children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+}
 class AreaEditor extends React.Component{
     constructor(props) {
         super(props);
+
+        this.state = {
+            lib_names: []
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
     }
 
     componentDidMount() {
@@ -23,6 +33,11 @@ class AreaEditor extends React.Component{
             form.setFieldsValue(editTarget);
         }
     }
+
+    handleChange(value){
+        console.log(`selected ${value}`);
+    }
+
 
     handleSubmit(e){
         e.preventDefault();
@@ -56,6 +71,7 @@ class AreaEditor extends React.Component{
     }
 
     render(){
+        const {lib_names} = this.state;
         const {form} = this.props;
         const {getFieldDecorator} = form;
         return(
@@ -95,10 +111,16 @@ class AreaEditor extends React.Component{
                         rules:[
                             {
                                 required:true,
-                                message:'请输入图书馆馆编号'
+                                message:'请输入图书馆馆编号',
                             }
                         ]
-                    })(<Input type="text"/>)}
+                    })(<Select
+                        mode="multiple"
+                        placeholder="Please select"
+                        onChange={this.handleChange}
+                    >
+                        {children}
+                    </Select>)}
                 </FormItem>
                 <FormItem wrapperCol={{span: formLayout.wrapperCol.span, offset: formLayout.labelCol.span}}>
                     <Button type="primary" htmlType="submit">提交</Button>

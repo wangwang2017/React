@@ -25,23 +25,27 @@ export default class EquipmentHeart extends React.Component{
         const columns = [
             {
                 title:'心跳ID',
-                dataIndex:'id'
+                dataIndex:'id',
+                width:100
             },
             {
                 title:'设备编号',
-                dataIndex:'ecode'
+                dataIndex:'ecode',
+                width:100
             },
             {
                 title:'设备状态',
-                dataIndex:'status'
+                dataIndex:'status',
+                width:100,
             },
             {
                 title:'发送时间',
-                dataIndex:'timestamp'
+                dataIndex:'timestamp',
+                width:200
             }
         ];
         return(
-            <Table dataSource={heart} columns={columns} rowKey={row =>row.id}/>
+            <Table  dataSource={heart} columns={columns} rowKey={row =>row.id} />
         );
     }
 }

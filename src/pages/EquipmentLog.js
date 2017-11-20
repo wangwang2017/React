@@ -25,19 +25,23 @@ export default class EquipmentLog extends React.Component{
         const columns = [
             {
                 title: '日志ID',
-                dataIndex: 'id'
+                dataIndex: 'id',
+                width:100
             },
             {
                 title: '设备编号',
-                dataIndex: 'ecode'
+                dataIndex: 'ecode',
+                width:100
             },
             {
                 title: '信息类别',
-                dataIndex: 'info_kind'
+                dataIndex: 'info_kind',
+                width:100
             },
             {
                 title: '时间',
-                dataIndex: 'timestamp'
+                dataIndex: 'timestamp',
+                width:150
             },
             {
                 title: '日志信息',

@@ -8,7 +8,7 @@
       "user_email": "zhangsan@163.com",
       "user_phone": "13838389438",
       "user_role": "0",
-      "user_area": 10000,
+      "user_area": "",
       "id": 10000
     },
     {
@@ -18,7 +18,7 @@
       "user_password": "123456",
       "user_email": "zhangsang@163.com",
       "user_phone": "13737379437",
-      "user_role": "0",
+      "user_role": 1,
       "user_area": 10002,
       "id": 10001
     },
@@ -29,9 +29,108 @@
       "user_password": "123456",
       "user_email": "zhangsan@163.com",
       "user_phone": "13636369436",
-      "user_role": "0",
-      "user_area": 10001,
+      "user_role": 2,
+      "user_area": "上海",
       "id": 10002
+    },
+    {
+      "user_name": "孙六",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "sunliu@163.com",
+      "user_phone": "13535359435",
+      "user_role": 3,
+      "user_area": "上海",
+      "id": 10003
+    },
+    {
+      "user_name": "一一",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13636369436",
+      "user_role": 2,
+      "user_area": "上海",
+      "id": 10004
+    },
+    {
+      "user_name": "二二",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "sunliu@163.com",
+      "user_phone": "13535359435",
+      "user_role": 3,
+      "user_area": "上海",
+      "id": 10005
+    },
+    {
+      "user_name": "四四",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13636369436",
+      "user_role": 2,
+      "user_area": "浙江",
+      "id": 10006
+    },
+    {
+      "user_name": "三三",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "sunliu@163.com",
+      "user_phone": "13535359435",
+      "user_role": 3,
+      "user_area": "浙江",
+      "id": 10007
+    },
+    {
+      "user_name": "五五",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13636369436",
+      "user_role": 2,
+      "user_area": "江西",
+      "id": 10008
+    },
+    {
+      "user_name": "六六",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "sunliu@163.com",
+      "user_phone": "13535359435",
+      "user_role": 3,
+      "user_area": "江西",
+      "id": 10009
+    },
+    {
+      "user_name": "小九",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "zhangsan@163.com",
+      "user_phone": "13636369436",
+      "user_role": 2,
+      "user_area": "安徽",
+      "id": 10010
+    },
+    {
+      "user_name": "七七",
+      "user_gender": "male",
+      "user_account": "admin",
+      "user_password": "123456",
+      "user_email": "sunliu@163.com",
+      "user_phone": "13535359435",
+      "user_role": 3,
+      "user_area": "安徽",
+      "id": 10011
     }
   ],
   "equipments": [
@@ -41,8 +140,8 @@
       "e_lib": "zstsg",
       "e_address": "中国浙江舟山",
       "e_info": "版本：0.0.7.5，固件版本：0.0.10.0",
-      "e_kind": 1,
-      "e_area": 1,
+      "e_kind": "查询办证机",
+      "e_area": "浙江",
       "id": 10000
     },
     {
@@ -51,8 +150,8 @@
       "e_lib": "wltsg",
       "e_address": "中国浙江温岭",
       "e_info": "版本：0.0.7.5，固件版本：0.0.10.1",
-      "e_kind": 2,
-      "e_area": 1,
+      "e_kind": "自助借还机",
+      "e_area": "浙江",
       "e_status": "Running",
       "e_log": [
         "正在借书",
@@ -68,49 +167,49 @@
       "e_lib": "ncxtsg",
       "e_address": "中国江西南昌",
       "e_info": "版本号：0.6.1.45 固件版本：0.2.1.5",
-      "e_kind": 2,
-      "e_area": 1,
+      "e_kind": "自助借还机",
+      "e_area": "江西",
       "id": 10002
     }
   ],
   "area": [
     {
       "a_name": "浙江",
-      "a_user": 10002,
-      "a_maintain":10010,
+      "a_user": "四四",
+      "a_maintain": "三三",
       "a_libs": [
-        "wltsg",
-        "zstsg"
+        "温岭图书馆",
+        "舟山图书馆"
       ],
       "id": 10000
     },
     {
       "a_name": "江西",
-      "a_user": 10003,
-      "a_maintain":10009,
+      "a_user": "五五",
+      "a_maintain": "六六",
       "a_libs": [
-        "ncxtsg",
-        "jxstsg"
+        "南昌县图书馆",
+        "江西省图书馆"
       ],
       "id": 10001
     },
     {
       "a_name": "安徽",
-      "a_user": 10004,
-      "a_maintain":10008,
+      "a_user": "小九",
+      "a_maintain": "七七",
       "a_libs": [
-        "ahsdtsg",
-        "ahstsg"
+        "安徽时代图书馆",
+        "安徽省图书馆"
       ],
       "id": 10002
     },
     {
       "a_name": "上海",
-      "a_user": 10005,
-      "a_maintain":10007,
+      "a_user": "一一",
+      "a_maintain": "二二",
       "a_libs": [
-        "shjdtsg",
-        "shpdtsg"
+        "上海交大图书馆",
+        "上海浦东图书馆"
       ],
       "id": 10003
     }
@@ -119,11 +218,11 @@
     {
       "lib_name": "温岭图书馆",
       "lib_duty": "温岭馆长",
-      "lib_phone": "137xxxxxxxx",
-      "lib_area": 10000,
-      "lib_address": "中国浙江温岭",
+      "lib_phone": "13718889888",
       "lib_email": "wltsg@163.com",
+      "lib_address": "中国浙江温岭",
       "lib_code": "wltsg",
+      "lib_area": "浙江",
       "lib_income": 3000,
       "id": 10000
     },
@@ -131,7 +230,7 @@
       "lib_name": "舟山图书馆",
       "lib_duty": "舟山",
       "lib_phone": "131xxxxxxxx",
-      "lib_area": 10000,
+      "lib_area": "浙江",
       "lib_address": "中国浙江舟山",
       "lib_email": "zssg@163.com",
       "lib_code": "zstsg",
@@ -145,7 +244,7 @@
       "lib_email": "ahsdtsg@163.com",
       "lib_address": "中国安徽",
       "lib_code": "ahsdtsg",
-      "lib_area": 10001,
+      "lib_area": "安徽",
       "lib_income": 100000,
       "id": 10002
     },
@@ -156,7 +255,7 @@
       "lib_email": "ahtsg@163.com",
       "lib_address": "中国安徽",
       "lib_code": "ahstsg",
-      "lib_area": 10001,
+      "lib_area": "安徽",
       "lib_income": 100000,
       "id": 10003
     },
@@ -167,7 +266,7 @@
       "lib_email": "ncxtsg@163.com",
       "lib_address": "中国江西南昌",
       "lib_code": "ncxtsg",
-      "lib_area": 10002,
+      "lib_area": "江西",
       "lib_income": 100000,
       "id": 10004
     },
@@ -178,7 +277,7 @@
       "lib_email": "jxstsg@163.com",
       "lib_address": "中国江西南昌",
       "lib_code": "jxstsg",
-      "lib_area": 10002,
+      "lib_area": "江西",
       "lib_income": 100000,
       "id": 10005
     },
@@ -189,7 +288,7 @@
       "lib_email": "shpdtsg@163.com",
       "lib_address": "中国上海",
       "lib_code": "shpdtsg",
-      "lib_area": 10003,
+      "lib_area": "上海",
       "lib_income": 100000,
       "id": 10006
     },
@@ -200,7 +299,7 @@
       "lib_email": "shjdtsg@163.com",
       "lib_address": "中国上海",
       "lib_code": "shjdtsg",
-      "lib_area": 10003,
+      "lib_area": "上海",
       "lib_income": 100000,
       "id": 10007
     }
@@ -344,8 +443,8 @@
     {
       "ecode": "zs_lc_10",
       "info_kind": "Send",
-      "timestamp": "{command:113,mark:108068,session_id:4681053,equipment_id:0800,check_code:5690}",
-      "info_content": "2017-11-10 09:16:10",
+      "timestamp": "2017-11-10 09:16:10",
+      "info_content": "{command:113,mark:108068,session_id:4681053,equipment_id:0800,check_code:5690}",
       "id": 10004
     },
     {

@@ -14,22 +14,13 @@ export default class AreaList extends React.Component{
         get('http://localhost:3000/area')
             .then(res=>{
                 this.setState({
-                    areaList:res
+                    areaList:res,
                 });
             });
     }
 
     handleEdit(area){
         this.context.router.push('/area/edit/'+area.id);
-    }
-
-    getUserName(area){
-        console.log(area.a_user);
-        get('http://localhost:3000/user?user_area='+area.a_user)
-            .then(res => {
-
-            });
-
     }
 
     handleDel(area){
@@ -60,22 +51,66 @@ export default class AreaList extends React.Component{
             },
             {
                 title:'管理人员',
-                dataIndex:'a_user'
+                dataIndex:'a_user',
+                render:value =>{
+                    const obj = {
+                        children:value,
+                        props:[]
+                    };
+                    if (Array.isArray(obj.children)){
+                        return(
+                            obj.children.join(";\t")
+                        )
+                    }else{
+                        return(
+                            obj.children
+                        )
+                    }
+                }
             },
             {
                 title:'维护人员',
-                dataIndex:'a_maintain'
+                dataIndex:'a_maintain',
+                render:value =>{
+                    const obj = {
+                        children:value,
+                        props:[]
+                    };
+                   if (Array.isArray(obj.children)){
+                       return(
+                           obj.children.join(";\t")
+                       )
+                   }else{
+                       return(
+                           obj.children
+                       )
+                   }
+                }
             },
             {
                 title:'图书馆',
-                dataIndex:'a_lib'
+                dataIndex:'a_libs',
+                render:value =>{
+                   const obj = {
+                       children:value,
+                       props:[]
+                   }
+                    if (Array.isArray(obj.children)){
+                        return(
+                           obj.children.join(";\t")
+                       )
+                    }else{
+                        return(
+                            obj.children
+                        )
+                    }
+                }
             },
             {
              title:'操作',
              render:(text,record) =>(
                  <Button.Group type="ghost">
                      <Button size="small" onClick={()=>this.handleEdit(record)}>编辑</Button>
-                     <Button size="small" onClick={()=>this.getUserName(record)}>查看</Button>
                      <Popconfirm title="确定要删除吗？" onConfirm={() => this.handleDel(record)}>
                          <Button size="small" >删除</Button>
                      </Popconfirm>
@@ -84,7 +119,7 @@ export default class AreaList extends React.Component{
             }
         ];
         return(
-            <Table  columns={columns} dataSource={areaList} rowKey={row =>row.id}/>
+            <Table  columns={columns} dataSource={areaList} rowKey={row =>row.id} bordered />
         );
     }
 }
