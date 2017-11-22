@@ -1,6 +1,6 @@
 import React from 'react';
-import {Input,InputNumber,Form,Button,message} from 'antd';
-import request from '../utils/request';
+import {Input,Select,Form,Button,message} from 'antd';
+import request,{get} from '../utils/request';
 const FormItem = Form.Item;
 const formLayout= {
     labelCol:{
@@ -10,15 +10,20 @@ const formLayout= {
         span:16
     }
 };
+const Option = Select.Option;
 
 class EquipEditor extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            options:[]
+            options:[],
+            areas:[]
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleKindsChange = this.handleKindsChange.bind(this);
+        this.handleAreaChange = this.handleAreaChange.bind(this);
     }
+
 
     componentDidMount() {
         const {editTarget,form} = this.props;
@@ -27,11 +32,60 @@ class EquipEditor extends React.Component{
         }
     }
 
+
+
+
+    getEquimentKinds(){
+        get('http://localhost:3000/equipment_kind')
+            .then((res) => {
+                this.setState({
+                    options:res.map((equipment_kinds) =>{
+                        return(
+                            <Option key={equipment_kinds.ek_name}>{equipment_kinds.ek_name}({equipment_kinds.ek_code})</Option>
+                        );
+                    })
+                });
+            });
+    }
+
+
+    getAreaContent(){
+        get('http://localhost:3000/area')
+            .then((res) => {
+                this.setState({
+                    areas:res.map((area) =>{
+                        return(
+                            <Option key={area.a_name}>{area.a_name}</Option>
+                        );
+
+                    })
+                });
+            });
+    }
+
+    handleKindsChange(){
+        if (this.timer) {
+            clearTimeout(this.timer);
+        }
+        this.timer = setTimeout(() =>{
+            this.getEquimentKinds();
+            this.timer = 0;
+        },300);
+    }
+
+    handleAreaChange(){
+        if (this.timer) {
+            clearTimeout(this.timer);
+        }
+        this.timer = setTimeout(() =>{
+            this.getAreaContent();
+            this.timer = 0;
+        },300);
+    }
+
     handleSubmit(e){
         e.preventDefault();
-
         const {form,editTarget} = this.props;
-
         form.validateFields((err,values) =>{
             if(err){
                 message.warn(err);
@@ -62,6 +116,7 @@ class EquipEditor extends React.Component{
     
 
     render(){
+        const {options,areas} = this.state;
         const {form} = this.props;
         const {getFieldDecorator} = form;
         return(
@@ -116,39 +171,66 @@ class EquipEditor extends React.Component{
                         ]
                     })(<Input type="text"/>)}
                 </FormItem>
-                <FormItem label="设备种类："{...formLayout}>
-                    {getFieldDecorator('e_kind',{
+                <FormItem label="花生棒SN码："{...formLayout}>
+                    {getFieldDecorator('e_sn',{
                         rules:[
                             {
                                 required:true,
-                                message:'请输入设备信息',
-                                type:'number'
-                            },
-                            {
-                                min: 1,
-                                max: 5,
-                                message: '请输入1~5的设备种类编号',
-                                type: 'number'
+                                message:'请输入对应设备的花生棒SN码',
                             }
                         ]
-                    })(<InputNumber/>)}
+                    })(<Input type="text"/>)}
+                </FormItem>
+                <FormItem label="花生棒密码："{...formLayout}>
+                    {getFieldDecorator('e_pwd',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入对应设备的花生棒密码',
+                            }
+                        ]
+                    })(<Input type="text"/>)}
+                </FormItem>
+                <FormItem label="外网通道："{...formLayout}>
+                    {getFieldDecorator('e_link',{
+                        rules:[
+                            {
+                                required:true,
+                                message:'请输入外网通道',
+                            }
+                        ]
+                    })(<Input type="text"/>)}
+                </FormItem>
+                <FormItem label="设备种类："{...formLayout}>
+                    {getFieldDecorator('e_kind',{
+                        initialValue: '查询办证机' || [],
+                        rules:[
+                            {
+                                required:true,
+                                message:'请选择设备种类',
+                            }
+                        ]
+                    })(
+                        <Select
+                            onChange={this.handleKindsChange()}
+                        >
+                            {options}
+                        </Select>
+                    )}
                 </FormItem>
                 <FormItem label="所在区域："{...formLayout}>
                     {getFieldDecorator('e_area',{
                         rules:[
                             {
                                 required:true,
-                                message:'请输入设备所在区域',
-                                type:'number'
-                            },
-                            {
-                                min: 1,
-                                max: 3,
-                                message: '请输入1~3的设备所在区域',
-                                type: 'number'
+                                message:'请选择设备所在区域',
                             }
                         ]
-                    })(<InputNumber/>)}
+                    })(<Select
+                        onChange={this.handleAreaChange()}
+                    >
+                        {areas}
+                    </Select>)}
                 </FormItem>
                 <FormItem wrapperCol={{span: formLayout.wrapperCol.span, offset: formLayout.labelCol.span}}>
                     <Button type="primary" htmlType="submit">提交</Button>

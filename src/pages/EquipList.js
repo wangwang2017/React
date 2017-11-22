@@ -78,6 +78,18 @@ class EquipList extends React.Component{
                 dataIndex:'e_info'
             },
             {
+                title:'花生棒SN码',
+                dataIndex:'e_sn'
+            },
+            {
+                title:'花生棒密码',
+                dataIndex:'e_pwd'
+            },
+            {
+                title:'外网通道',
+                dataIndex:'e_link'
+            },
+            {
                 title:'设备种类',
                 dataIndex:'e_kind'
             },
@@ -87,12 +99,16 @@ class EquipList extends React.Component{
             },
             {
                 title:'设备状态',
+                fixed: 'right',
+                width: 100,
                 render:(text,record) =>(
                     <Button type="primary" size="small" icon="search" onClick={()=>this.handleCheckStatus(record)} >查询</Button>
                 )
             },
             {
                 title:'设备日志',
+                fixed: 'right',
+                width: 100,
                 render:(text,record) =>(
                     <Button type="primary" size="small" icon="search" onClick={()=>this.handleCheckLogs(record)} >查询</Button>
                 )
