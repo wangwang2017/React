@@ -131,6 +131,17 @@
       "user_role": 3,
       "user_area": "安徽",
       "id": 10011
+    },
+    {
+      "user_name": "asfs",
+      "user_gender": "male",
+      "user_account": "amd",
+      "user_password": "123",
+      "user_email": "afaf@qq.com",
+      "user_phone": "17718983930",
+      "user_role": "0",
+      "user_area": "10000",
+      "id": 10012
     }
   ],
   "equipments": [

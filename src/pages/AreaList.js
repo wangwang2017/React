@@ -1,7 +1,9 @@
 import React from 'react';
-import {message,Table,Button,Popconfirm} from 'antd';
+import {message,Table,Button,Popconfirm,Input} from 'antd';
 import {del,get} from '../utils/request';
 
+
+const Search = Input.Search;
 export default class AreaList extends React.Component{
     constructor(props){
         super(props);
@@ -34,6 +36,20 @@ export default class AreaList extends React.Component{
             .catch(err=>{
                 console.error(err);
                 message.error('删除区域失败');
+            });
+    }
+
+    handleSearch(value){
+        get('http://localhost:3000/area?q='+ value)
+            .then(res => {
+                this.setState({
+                    areaList:res
+                });
+                message.success('查找 ' + value + ' 成功');
+            })
+            .catch(err => {
+                console.error(err);
+                message.error('查找失败');
             });
     }
 
@@ -119,7 +135,16 @@ export default class AreaList extends React.Component{
             }
         ];
         return(
-            <Table  columns={columns} dataSource={areaList} rowKey={row =>row.id} bordered />
+            <div>
+                <Search
+                    placeholder="区域名称|管理人员|维护人员|图书馆"
+                    enterButton="true" size="large"
+                    onSearch={value => this.handleSearch(value)}
+                    style={{ width: '50%' }}
+                />
+                <br/>
+                <Table  columns={columns} dataSource={areaList} rowKey={row =>row.id} bordered />
+            </div>
         );
     }
 }

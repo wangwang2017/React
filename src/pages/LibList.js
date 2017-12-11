@@ -1,6 +1,8 @@
 import React from 'react';
-import { message, Table, Button, Popconfirm } from 'antd';
+import { message, Table, Button, Popconfirm,Input } from 'antd';
 import {del,get} from '../utils/request';
+
+const Search = Input.Search;
 
 class LibList extends React.Component{
     constructor(props){
@@ -37,19 +39,33 @@ class LibList extends React.Component{
             });
     }
 
+    handleSearch(value){
+        get('http://localhost:3000/lib?q='+ value)
+            .then(res => {
+                this.setState({
+                    libList:res
+                });
+                message.success('查找 ' + value + ' 成功');
+            })
+            .catch(err => {
+                console.error(err);
+                message.error('查找失败');
+            });
+    }
+
     render(){
         const {libList} = this.state;
         const columns =[
             {
-                title:'图书馆ID',
+                title:'ID',
                 dataIndex:'id'
             },
             {
-                title:'图书馆名字',
+                title:'图书馆',
                 dataIndex:'lib_name'
             },
             {
-                title:'图书馆负责人',
+                title:'负责人',
                 dataIndex:'lib_duty'
             },
             {
@@ -89,7 +105,16 @@ class LibList extends React.Component{
             }
         ];
         return(
+            <div>
+                <Search
+                    placeholder="图书馆|负责人|馆电话|馆邮箱|馆地址|馆所在区"
+                    enterButton="true" size="large"
+                    onSearch={value => this.handleSearch(value)}
+                    style={{ width: '50%' }}
+                />
+                <br/>
                 <Table  columns={columns} dataSource={libList} rowKey={row =>row.id}/>
+            </div>
         );
     }
 }

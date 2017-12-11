@@ -1,6 +1,8 @@
 import React from 'react';
-import { message, Table, Button, Popconfirm } from 'antd';
+import { message, Table, Button, Popconfirm,Input } from 'antd';
 import {del,get} from '../utils/request';
+
+const Search = Input.Search;
 
 class UserList extends React.Component {
     constructor (props) {
@@ -36,6 +38,20 @@ class UserList extends React.Component {
                 message.error('删除用户失败');
             });
 
+    }
+
+    handleSearch(value){
+        get('http://localhost:3000/user?q='+ value)
+            .then(res => {
+                this.setState({
+                  userList:res
+                });
+                message.success('查找 ' + value + ' 成功');
+            })
+            .catch(err => {
+                    console.error(err);
+                    message.error('查找失败');
+                });
     }
 
     render () {
@@ -93,8 +109,17 @@ class UserList extends React.Component {
         ];
 
         return (
-            <Table dataSource={userList} columns={columns} rowKey={row=>row.id}>
-            </Table>
+            <div>
+                <Search
+                    placeholder="姓名|区域|邮箱|电话|性别"
+                    enterButton="true" size="large"
+                    onSearch={value => this.handleSearch(value)}
+                    style={{ width: '50%' }}
+                />
+                <br/>
+                <Table dataSource={userList} columns={columns} rowKey={row=>row.id}>
+                </Table>
+            </div>
         );
     }
 }

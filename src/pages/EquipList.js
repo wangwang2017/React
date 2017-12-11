@@ -1,6 +1,8 @@
 import React from 'react';
-import {message,Table,Button, Popconfirm,Popover } from 'antd';
+import {message,Table,Button, Popconfirm,Input } from 'antd';
 import {del,get} from '../utils/request';
+
+const Search = Input.Search;
 
 class EquipList extends React.Component{
     constructor(props){
@@ -43,6 +45,20 @@ class EquipList extends React.Component{
             .catch(err =>{
                 console.error(err);
                 message.error('删除设备失败');
+            });
+    }
+
+    handleSearch(value){
+        get('http://localhost:3000/equipmets?q='+ value)
+            .then(res => {
+                this.setState({
+                    equipList:res
+                });
+                message.success('查找 ' + value + ' 成功');
+            })
+            .catch(err => {
+                console.error(err);
+                message.error('查找失败');
             });
     }
 
@@ -128,7 +144,16 @@ class EquipList extends React.Component{
             }
         ];
         return(
-            <Table dataSource={equipList} columns={columns} rowKey={row =>row.id} scroll={{ x: '130%' }}/>
+            <div>
+                <Search
+                    placeholder="设备编号|设备名称|设备地址|设备信息|花生棒SN码|外网通道|设备种类|所在区域"
+                    enterButton="true" size="large"
+                    onSearch={value => this.handleSearch(value)}
+                    style={{ width: '50%' }}
+                />
+                <br/>
+                <Table dataSource={equipList} columns={columns} rowKey={row =>row.id} scroll={{ x: '130%' }}/>
+            </div>
         );
     }
 }
